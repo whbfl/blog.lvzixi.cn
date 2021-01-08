@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="https://www.lvzixi.cn/梓希.jpg" type="image/x-icon">
+<title>梓希博客</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* body 样式 */
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+/* 标题 */
+.header {
+    padding: 100px;
+    text-align: center;
+    background:  #cce2ff;
+    color: black;
+}
+
+/* 标题字体加大 */
+.header h1 {
+    font-size: 40px;
+}
+
+/* 导航 */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* 导航栏样式 */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* 右侧链接*/
+.navbar a.right {
+    float: right;
+}
+
+/* 鼠标移动到链接的颜色 */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* 列容器 */
+.row {  
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+}
+
+/* 创建两个列 */
+/* 边栏 */
+.side {
+    -ms-flex: 30%; /* IE10 */
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+/* 主要的内容区域 */
+.main {   
+    -ms-flex: 70%; /* IE10 */
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+}
+
+/* 测试图片 */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+/* 底部 */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+}
+
+/* 响应式布局 - 在屏幕设备宽度尺寸小于 700px 时, 让两栏上下堆叠显示 */
+@media screen and (max-width: 700px) {
+    .row {   
+        flex-direction: column;
+    }
+}
+
+/* 响应式布局 - 在屏幕设备宽度尺寸小于 400px 时, 让导航栏目上下堆叠显示 */
+@media screen and (max-width: 400px) {
+    .navbar a {
+        float: none;
+        width: 100%;
+    }
+}
+::selection{
+    background-color: #cce2ff;
+    color: rgba(0,0,0,.87);
+}
+*{
+    font-family: "Microsoft Yahei", "Consolas", "Inconsolata", "Monaco", "Monofur", "Courier", monospace;
+    font-weight: 400;
+	position: relative;
+}
+.container{
+    width: 72%;
+}
+.lighter{
+    font-weight: 100;
+}
+.bolder{
+    font-weight: 700;
+}
+.header{
+    font-size: 2em;
+}
+.left{
+    text-align: left;
+}
+.center{
+    text-align: center;
+    margin: auto;
+}
+.right{
+    text-align: right;
+}
+.link{
+    color: rgb(33,133,208);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.link:hover{
+    color: rgb(0,93,168)!important;
+    text-decoration: underline;
+}
+.link:visited{
+    color: rgb(33,133,208);
+    text-decoration: underline;
+}
+.red{
+    color: rgb(219,40,40);
+    border-color: rgb(219,40,40);
+}
+.button.reversal.red{
+    background-color: rgb(219,40,40)!important;
+    border-color: rgb(219,40,40);
+    color: rgb(248, 248, 248)!important;
+}
+.link.red:hover,.button.red:hover{
+    color: rgb(179,0,0)!important;
+}
+.button.reversal:hover{
+    background-color: rgb(179,0,0)!important;
+    border-color: rgb(179,0,0);
+    color: rgb(248, 248, 248)!important;
+}
+.link.red{
+    color: rgb(219,40,40);
+}
+.link.red:visited{
+    color: rgb(219,40,40);
+}
+.orange{
+    color: rgb(242,113,28);
+    border-color: rgb(242,113,28);
+}
+.button.reversal.orange{
+    background-color: rgb(242,113,28)!important;
+    border-color: rgb(242,113,28);
+    color: rgb(248, 248, 248)!important;
+}
+.link.orange:hover,.button.orange:hover{
+    color: rgb(202,73,0)!important;
+}
+.button.reversal.orange:hover{
+    background-color: rgb(202,73,0)!important;
+    border-color: rgb(202,73,0);
+    color: rgb(248, 248, 248)!important;
+}
+.link.orange{
+    color: rgb(242,113,28);
+}
+.link.orange:visited{
+    color: rgb(242,113,28);
+}
+.yellow{
+    color: rgb(251,189,8);
+    border-color: rgb(251,189,8);
+}
+.button.reversal.yellow{
+    background-color: rgb(251,189,8)!important;
+    border-color: rgb(251,189,8);
+    color: rgb(248, 248, 248)!important;
+}
+.link.yellow:hover,.button.yellow:hover{
+    color: rgb(211,149,0)!important;
+}
+.button.reversal.yellow:hover{
+    background-color: rgb(211,149,0)!important;
+    border-color: rgb(211,149,0);
+    color: rgb(248, 248, 248)!important;
+}
+.link.yellow:visited{
+    color: rgb(251,189,8);
+}
+.olive{
+    color: rgb(181,204,24);
+    border-color: rgb(181,204,24);
+}
+.button.reversal.olive{
+    background-color: rgb(181,204,24)!important;
+    border-color: rgb(181,204,24);
+    color: rgb(248, 248, 248)!important;
+}
+.link.olive:hover,.button.olive:hover{
+    color: rgb(141,164,0)!important;
+}
+.button.reversal.olive:hover{
+    background-color: rgb(141,164,0)!important;
+    border-color: rgb(141,164,0);
+    color: rgb(248, 248, 248)!important;
+}
+.link.olive{
+    color: rgb(181,204,24);
+}
+.link.olive:visited{
+    color: rgb(181,204,24);
+}
+.green{
+    color: rgb(33,186,69);
+    border-color: rgb(33,186,69);
+}
+.button.reversal.green{
+    background-color: rgb(33,186,69)!important;
+    border-color: rgb(33,186,69);
+    color: rgb(248, 248, 248)!important;
+}
+.link.green:hover,.button.green:hover{
+    color: rgb(0,146,29)!important;
+}
+.button.reversal.green:hover{
+    background-color: rgb(0,146,29)!important;
+    border-color: rgb(0,146,29);
+    color: rgb(248, 248, 248)!important;
+}
+.link.green{
+    color: rgb(33,186,69);
+}
+.link.green:visited{
+    color: rgb(33,186,69);
+}
+.teal{
+    color: rgb(0,181,173);
+    border-color: rgb(0,181,173);
+}
+.button.reversal.teal{
+    background-color: rgb(0,181,173)!important;
+    border-color: rgb(0,181,173);
+    color: rgb(248, 248, 248)!important;
+}
+.link.teal:hover,.button.teal:hover{
+    color: rgb(0,141,133)!important;
+}
+.button.reversal.teal:hover{
+    background-color: rgb(0,141,133)!important;
+    border-color: rgb(0,141,133);
+    color: rgb(248, 248, 248)!important;
+}
+.link.teal{
+    color: rgb(0,181,173);
+}
+.link.teal:visited{
+    color: rgb(0,181,173);
+}
+.blue{
+    color: rgb(33,133,208);
+    border-color: rgb(33,133,208);
+}
+.button.reversal.blue{
+    background-color: rgb(33,133,208)!important;
+    border-color: rgb(33,133,208);
+    color: rgb(248, 248, 248)!important;
+}
+.link.blue:hover,.button.blue:hover{
+    color: rgb(0,93,168)!important;
+}
+.button.reversal.blue:hover{
+    background-color: rgb(0,93,168)!important;
+    border-color: rgb(0,93,168);
+    color: rgb(248, 248, 248)!important;
+}
+.link.blue{
+    color: rgb(33,133,208);
+}
+.link.blue:visited{
+    color: rgb(33,133,208);
+}
+.purple{
+    color: rgb(163,51,200);
+    border-color: rgb(163,51,200);
+}
+.button.reversal.purple{
+    background-color: rgb(163,51,200)!important;
+    border-color: rgb(163,51,200);
+    color: rgb(248, 248, 248)!important;
+}
+.link.purple:hover,.button.purple:hover{
+    color: rgb(123,11,160)!important;
+}
+.button.reversal.purple:hover{
+    background-color: rgb(123,11,160)!important;
+    border-color: rgb(123,11,160);
+    color: rgb(248, 248, 248)!important;
+}
+.link.purple:visited{
+    color: rgb(163,51,200);
+}
+.pink{
+    color: rgb(224,57,151);
+    border-color: rgb(224,57,151);
+}
+.button.reversal.pink{
+    background-color: rgb(224,57,151)!important;
+    border-color: rgb(224,57,151);
+    color: rgb(248, 248, 248)!important;
+}
+.link.pink:hover,.button.pink:hover{
+    color: rgb(184,17,111)!important;
+}
+.button.reversal.pink:hover{
+    background-color: rgb(184,17,111)!important;
+    border-color: rgb(184,17,111);
+    color: rgb(248, 248, 248)!important;
+}
+.link.pink{
+    color: rgb(224,57,151);
+}
+.link.pink:visited{
+    color: rgb(224,57,151);
+}
+.brown{
+    color: rgb(165,103,63);
+    border-color: rgb(165,103,63);
+}
+.button.reversal.brown{
+    background-color: rgb(165,103,63)!important;
+    border-color: rgb(165,103,63);
+    color: rgb(248, 248, 248)!important;
+}
+.link.brown:hover,.button.brown:hover{
+    color: rgb(125,63,23)!important;
+}
+.button.reversal.brown:hover{
+    background-color: rgb(125,63,23)!important;
+    border-color: rgb(125,63,23);
+    color: rgb(248, 248, 248)!important;
+}
+.link.brown{
+    color: rgb(165,103,63);
+}
+.link.brown:visited{
+    color: rgb(165,103,63);
+}
+.grey{
+    color: rgb(118,118,118);
+    border-color: rgb(118,118,118);
+}
+.button.reversal.grey{
+    background-color: rgb(118,118,118)!important;
+    border-color: rgb(118,118,118);
+    color: rgb(248, 248, 248)!important;
+}
+.link.grey:hover,.button.grey:hover{
+    color: rgb(78,78,78)!important;
+}
+.button.reversal.grey:hover{
+    background-color: rgb(78,78,78)!important;
+    border-color: rgb(78,78,78);
+    color: rgb(248, 248, 248)!important;
+}
+.link.grey{
+    color: rgb(118,118,118);
+}
+.link.grey:visited{
+    color: rgb(118,118,118);
+}
+.black{
+    color: rgb(27,28,29);
+    border-color: rgb(27,28,29);
+}
+.button.reversal.black{
+    background-color: rgb(27,28,29)!important;
+    border-color: rgb(27,28,29);
+    color: rgb(248, 248, 248)!important;
+}
+.link.black:hover,.button.black:hover{
+    color: rgb(64,65,66)!important;
+}
+.button.reversal.black:hover{
+    background-color: rgb(49,51,52)!important;
+    border-color: rgb(49,51,52);
+    color: rgb(248, 248, 248)!important;
+}
+.link.black{
+    color: rgb(27,28,29);
+}
+.link.black:visited{
+    color: rgb(27,28,29);
+}
+.button{
+    display: inline-flex;
+    border-radius: .3em;
+    border: 2px solid;
+    min-width: 5.2em;
+    padding-left: .6em;
+    padding-right: .6em;
+    height: 1.8em;
+    margin-bottom: .4em;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    font-weight: inherit;
+    cursor: pointer;
+}
+.divider{
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: rgb(158,158,158);
+    box-sizing: border-box;
+}
+.divider.vertical{
+    display: inline-block;
+    height: auto!important;
+    width: 1px!important;
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: rgb(158,158,158);
+    box-sizing: border-box;
+}
+.footer{
+    width: 100%;
+    background-color: #373737;
+    color: #E7E7E7;
+    margin: auto;
+    margin-top: .8em;
+    padding-top: .78em;
+    padding-bottom: .78em;
+    min-height: 3em;
+    padding-left: 25%;
+    padding-right: 25%;
+    box-sizing: border-box;
+}
+.footer.floating{
+    position: fixed;
+    bottom: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #373737;
+    margin: auto;
+    height: 3em;
+    padding-left: 18%;
+    padding-right: 18%;
+    z-index: 9999;
+    box-sizing: border-box;
+}
+.nav>.item{
+    margin-top: .65em;
+    font-size: 1.13em;
+    color: #D7D7D7;
+    height: 100%;
+    display: inline-flex;
+    height: 100%;
+    cursor: pointer;
+    margin-left: .4em;
+    margin-right: .4em;
+}
+.nav>.item:hover{
+    color: #FFFFFF;
+}
+.nav>.item.selected{
+    color: #FFFFFF;
+}
+.nav>.item.disable{
+    color: #999999;
+    cursor: not-allowed;
+}
+.nav>.item.disable:hover{
+    color: #999999;
+}
+.nav-holder{
+    height: 3em;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>梓希博客</h1>
+  <h3>以后很多东西都会在这里发布</h3>
+</div>
+
+  <div class="main">
+    <p>发布于：2020年4月18日</p>
+      <h2>傻子都会的把网站挂在GitHub上的教程（六）</h2>
+      <h5>把网站挂在GitHub上白嫖服务器</h5>
+      <div class="fakeimg" style="height:300px;">
+啦啦啦啦，我来啦。<br>
+绑定自己域名的教程来啦<br/>
+首先去<a class="link teal bolder"target="_blank" href="https://www.baidu.com" >百度</a>上搜索“ping工具，ping一下你的那个GitHub网站<br>
+然后复制IP<br>
+来到域名解析，解析两个记录，一个是@，一个是www，都是A记录，IP就是刚刚ping的<br>
+最后来到仓库主页<br>
+新建一个名字为：“CNAME”的文件<br>
+名字一定是大写的CNAME<br/>
+内容写自己的域名，不要带https，www喜欢带就带，不喜欢带就不带<br>
+点击绿色按钮就阔以了<br/>
+<br>
+这样就可以啦
+<br>傻子都会的把网站挂在GitHub上的教程完结<br>
+</div>
+      <p>梓希博客</p>
+      <p>来自<a class="link teal bolder"target="_blank" href="https://www.lvzixi.cn" >梓希</a>的编辑</p>
+      <br>
+
+                <div class="divider"></div>
+<p>发布于：2020年4月13日具体几点我不知道</p>
+      <h2>傻子都会的把网站挂在GitHub上的教程（五）</h2>
+      <h5>把网站挂在GitHub上白嫖服务器</h5>
+      <div class="fakeimg" style="height:800px;">
+啦啦啦啦，我来啦。<br>
+最后一步来啦<br/>
+<img src="https://www.lvzixi.cn/仓库.png" height="200" width="300"><br/>
+<br>
+一样来到这里<br>
+点击下图中的设定值<br>
+<img src="https://www.lvzixi.cn/设置.png" height="30" width="40"><br>
+然后下拉，拉到下图这<br>
+<img src="https://www.lvzixi.cn/页面.png" height="200" width="300"><br>
+点击下面没有，再点击下图那个东东然后<br/>
+<img src="https://www.lvzixi.cn/分支.png" height="40" width="90"><br>
+然后回到那个GitHub页面（刚刚那）<br/>
+会看到有一个蓝色的框里面写着一些字然后就点击框中的网址，就会跳转到你的网站了<br>
+这样就可以啦
+<br>
+</div>
+      <p>梓希博客</p>
+      <p>来自<a class="link teal bolder"target="_blank" href="https://www.lvzixi.cn" >梓希</a>的编辑</p>
+      <br>
+
+                <div class="divider"></div>
+<p>发布于：2020年4月11日具体几点我不知道</p>
+      <h2>傻子都会的把网站挂在GitHub上的教程（四）</h2>
+      <h5>把网站挂在GitHub上白嫖服务器</h5>
+      <div class="fakeimg" style="height:500px;">
+啦啦啦啦，我来啦。<br>
+现在教新建<br/>
+<img src="https://www.lvzixi.cn/仓库.png" height="200" width="300"><br/>
+<br>
+一样来到这里<br>
+点击“创建新文件” 这段文字会到新文件的页面<br>
+在上面小框写index.html一定要这样写，不然你的网站就。。。<br>
+之后就复制好你的网站代码，粘贴在下面的大框里<br>
+点击下面的绿色按钮就可以啦<br/>
+然后就等着我下一篇博客吧
+<br>下一篇博客教最后的设置
+</div>
+      <p>梓希博客</p>
+      <p>来自<a class="link teal bolder"target="_blank" href="https://www.lvzixi.cn" >梓希</a>的编辑</p>
+      <br>
+
+                <div class="divider"></div>
+<p>发布于：2020年4月10日具体几点我不知道</p>
+      <h2>傻子都会的把网站挂在GitHub上的教程（三）</h2>
+      <h5>把网站挂在GitHub上白嫖服务器</h5>
+      <div class="fakeimg" style="height:500px;">
+啦啦啦啦，我来啦。<br>
+创建完仓库之后呢会看到下面这样的一个仓库主页<br/>
+<img src="https://www.lvzixi.cn/仓库.png" height="200" width="300"><br/>
+<br>
+这里有两种方法，1.上传 2.新建<br>
+我先教上传<br>
+点击“载现有文件来开始使用” 这段文字会到一个上传的页面<br>
+然后点击“选择你的文件”就选好文件上传，一次上传课上传多个文件但要分开选择<br>
+然后就点击下面的绿色按钮就可以了<br>
+然后就等着我下一篇博客吧
+</div>
+      <p>梓希博客</p>
+      <p>来自<a class="link teal bolder"target="_blank" href="https://www.lvzixi.cn" >梓希</a>的编辑</p>
+      <br>
+
+                <div class="divider"></div>
+<p>发布于：2020年4月8日具体几点我不知道</p>
+      <h2>傻子都会的把网站挂在GitHub上的教程（二）</h2>
+      <h5>把网站挂在GitHub上白嫖服务器</h5>
+      <div class="fakeimg" style="height:300px;">
+啦啦啦啦，我来啦。<br>
+进去之后呢你就在下图那个位置写仓库名<br/>
+<img src="https://www.lvzixi.cn/仓库名.png" ><br/>
+<br>
+然后就拉到最下面点击绿色按钮就成功创建仓库啦<br>
+来到仓库主页<br>
+然后就等着我的教程吧
+</div>
+      <p>梓希博客</p>
+      <p>来自<a class="link teal bolder"target="_blank" href="https://www.lvzixi.cn" >梓希</a>的编辑</p>
+      <br>
+
+                <div class="divider"></div>
+<p>发布于：2020年4月8日具体几点我不知道</p>
+      <h2>傻子都会的把网站挂在GitHub上的教程（一）</h2>
+      <h5>把网站挂在GitHub上白嫖服务器</h5>
+      <div class="fakeimg" style="height:500px;">
+啦啦啦啦，我来啦。<br>
+首先第一步你要有一个写好的网站的代码
+<br>
+这个不给教程，自己写。<br>
+代码写好之后，就要打开<a href="http://www.github.com/" class="link teal bolder" target="_blank">GitHub官网</a><br>
+建议使用有翻译的浏览器打开，不然英语不好的人啥也不懂。<br>
+然后注册一个账号，需要邮箱，这里就不教注册账号了，靠翻译自己来。<br>
+之后就来到下图的这个GitHub的首页<br/>
+<img src="https://www.lvzixi.cn/GitHub首页.png"height="150" width="200"><br>
+之后靠着翻译找到左上角的一个<br><img src="https://www.lvzixi.cn/新.png" height="100" width="100"><br/>
+然后点击一下创建一个新仓库，然后就等着我下一篇博客来教你吧
+</div>
+      <p>梓希博客</p>
+      <p>来自<a class="link teal bolder"target="_blank" href="https://www.lvzixi.cn" >梓希</a>的编辑</p>
+      <br>
+
+                <div class="divider"></div>
+  </div>
+</div>
+
+<div class="footer">
+  <h3>梓希博客</h3>
+<h3><a href="http://blog.lvzixi.cn/" class="link teal bolder">梓希博客</a></h3>
+<h3><a href="http://www.lvzixi.cn/" class="link teal bolder" target="_blank">梓希官网</a></h3>
+<div class="copy">&copy;2020-2021  <a href="https://www.lvzixi.cn/"class="link teal bolder"  target="_blank">梓希</a>
+</div>
+
+</body>
+</html>
